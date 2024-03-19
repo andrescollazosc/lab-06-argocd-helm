@@ -8,7 +8,7 @@ spec:
   source:  
     repoURL: https://github.com/andrescollazosc/lab-06-argocd-helm/
     targetRevision:  HEAD
-    path:  lab-06-app
+    path:  app-06
     helm:
       releaseName: testapp
       valueFiles:
