@@ -12,9 +12,12 @@ spec:
     helm:
       releaseName: testapp
       valueFiles:
-        # - secrets.yaml
-        - values.yaml
         - secrets.yaml
+        - values.yaml
+        # - secrets://secrets.yaml
+        # - secrets+gpg-import-kubernetes://argocd/helm-secrets-private-keys#poc-key.asc?secrets.yaml
+
+        - secrets+gpg-import:///helm-secrets-private-keys/poc-key.asc?secrets.yaml
   destination:  
     server:  https://kubernetes.default.svc
     namespace:  testapp
